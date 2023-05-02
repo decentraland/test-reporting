@@ -142,6 +142,9 @@ export class JavaJunitParser implements TestParser {
   }
 
   private exceptionThrowSource(stackTrace = ''): {filePath: string; line: number} | undefined {
+    if (typeof stackTrace !== 'string')
+      throw new Error(`exceptionThrowSource: stackTrace is not a string, it is a ${typeof stackTrace} with value ${JSON.stringify(stackTrace)}`)
+
     const lines = stackTrace.split(/\r?\n/)
     const re = /^at (.*)\((.*):(\d+)\)$/
 
