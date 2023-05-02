@@ -1,4 +1,4 @@
-name: Test Reporting
+name: Kuruk Test Reporting
 description: |
   Shows test results in GitHub UI: .NET (xUnit, NUnit, MSTest), Dart, Flutter, Java (JUnit), JavaScript (JEST, Mocha)
 author: Ian Moroney <ianmoroney@gmail.com>
