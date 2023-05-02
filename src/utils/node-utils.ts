@@ -5,6 +5,10 @@ export function getExceptionSource(
   trackedFiles: string[],
   getRelativePath: (str: string) => string
 ): {path: string; line: number} | undefined {
+
+  if (typeof stackTrace !== 'string')
+    throw new Error(`Details is not a string, it is a ${typeof stackTrace} with value ${JSON.stringify(stackTrace)}`)
+
   const lines = stackTrace.split(/\r?\n/)
   const re = /(?:\(| › )(.*):(\d+):\d+(?:\)$| › )/
 
